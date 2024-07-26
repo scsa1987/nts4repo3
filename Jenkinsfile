@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('terraform') {
-      steps {
-        bat(script: 'terraform init', label: 'init', returnStatus: true)
+      parallel {
+        stage('terraform') {
+          steps {
+            bat(script: 'terraform init', label: 'init', returnStatus: true)
+          }
+        }
+
+        stage('parallel') {
+          steps {
+            bat(script: 'echo "parallel"', label: 'parallel', returnStatus: true)
+          }
+        }
+
       }
     }
 

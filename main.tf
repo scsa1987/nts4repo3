@@ -22,7 +22,7 @@ resource "aws_vpc" "dep1" {
 
    "Name" = "VPC1"
 
-    
+    }
 
   }
 
@@ -34,6 +34,6 @@ resource "aws_vpc" "dep2" {
 
    "Name" = "VPC2"
 
-    
+    }
 
   }
